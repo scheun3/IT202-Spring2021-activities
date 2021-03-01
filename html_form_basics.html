@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+ </head>
+
+ <body>
+    <h1>Form Basics</h1>
+
+
+
+
+    <p id="uptonSinclairQuote">
+     It is difficult to get a man to understand something, when his salary depends upon his not understanding it! -- Upton Sinclair
+    </p>
+
+    <form id=" form1" name="form1">
+      <input type="text" id="text1" name="text1">
+    </form>
+	
+    <form>
+     <input type="radio" id="red " name="color" value="red">
+       <label for="red ">red</label>
+	   <br>
+       <input type="radio" id="green " name="color" value="green">
+       <label for="green">green</label>
+	   <br>
+       <input type="radio" id="blue " name="color" value="blue">
+       <label for="blue">blue</label>
+    </form> 
+	
+    <select id="select1">
+     <option value=" ">   </option>
+     <option value="Mon">Mon</option>
+     <option value="Wed">Wed</option>
+     <option value="Fri ">Fri</option>
+    </select>
+	
+    <form>
+     <textarea id= "textarea1" rows="4" cols="50">
+       Please provide any additional feedback
+     </textarea>
+     </form>  
+	
+     <script>
+      document.querySelector("input[value='green']").checked = true;
+    
+      document.querySelector("#text1").value= "Stan Cheung";
+       let quote= document.querySelector("#uptonSinclairQuote")
+       let text=document.querySelector("#textarea1")
+       text.value=quote.innerText
+    
+      document.querySelector("#select1").addEventListener("change", function(){
+       let value = document.querySelector("select option:checked").value
+       console.log(value)
+       });
+     </script>
+	
+ </body>
+</html>
