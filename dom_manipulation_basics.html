@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>DOM Manipulation</title>
+
+    <style>
+      .big {font-size:3em; }
+      .blue {color: blue;}
+      .bigBorder {border: black 3px solid;}
+    </style>
+
+  </head>
+  <body>
+
+    <div id="div1" class="bigBorder" ></div>
+    <div id="div2">
+      <img src="">
+    </div>
+    <div id="div3">
+      This div should be programmatically removed.
+    </div>
+
+    <ul>
+      <li class="big blue">IT202</li>
+    </ul>
+
+    <script>
+
+        document.querySelector("#div1").innerText="UIC";
+        document.querySelector("#div1").style.color="D50032";
+        document.querySelector("#div1").classList.add("big");
+        document.querySelector("img").src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/University_of_Illinois_at_Chicago_circle_logo.svg/1200px-University_of_Illinois_at_Chicago_circle_logo.svg.png";
+        document.querySelector("img").style.height = "25%";
+        document.querySelector("img").style.width = "25%";
+        document.querySelector("#div3").remove();
+        document.querySelector("title").innerText="scheun3";
+		
+        let li =document.createElement("LI");
+            li.innerText="Computer Science";
+		
+            document.querySelector("ul").append(li);
+            document.querySelector("li").classList.remove("big");  
+            document.querySelector("li").classList.add("blue");
+		
+        let imageClone= document.querySelector("img").cloneNode(true);
+            div1.appendChild(imageClone);
+		
+    </script>
+  </body>
+</html>
