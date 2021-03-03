@@ -34,24 +34,43 @@
 
       // create a function named areColliding that accepts two objects and returns a boolen based on collision
       // https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
-      let circle1 = {radius: 20, x: 5, y: 5};
-      let circle2 = {radius: 12, x: 10, y: 5};
+     function areColliding(obj1,obj2){
 
-      let dx = circle1.x - circle2.x;
-      let dy = circle1.y - circle2.y;
-      let distance = Math.sqrt(dx * dx + dy * dy);
+        var dx= obj1.x - obj2.x
+        var dy= obj1.y - obj2.y
+        var distance = Math.sqrt(dx * dx + dy * dy);
+        return (distance < obj1.radius + obj2.radius) 
 
-      if (distance < circle1.radius + circle2.radius) {
-    // collision detected!
-}
+      }
+		
+      console.log(areColliding(gameObjs[0],gameObjs[1]))
+      console.log(areColliding(gameObjs[0],gameObjs[2]))
 
-      // loop the objects to compare every pair
-      //    and if a pair are colliding, redraw them
-      //    with a white border
+      function drawCircle(obj,stroke){
+		  
+        ctx.beginPath()
+        ctx.arc(obj.x, obj.y, obj.radius, 0, Math.PI*2);
+        ctx.closePath();
+        ctx.fillStyle = obj.color;
+        ctx.fill();
 
+        if (stroke){
+			
+          ctx.stroke();
+			
+        }
+		  
+      }
+
+
+      if (areColliding (gameObjs[0],gameObjs[1])){
+
+        drawCircle(gameObjs[0], true);
+        drawCircle(gameObjs[1],true);
+		  
+      }
 
       // once you get that working, update the code above to create 25 additional gameObjects with random x, y and color values; and push them to the array before the drawing and comparison
-
 
     </script>
   </body>
